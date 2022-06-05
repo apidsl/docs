@@ -1,93 +1,330 @@
-# docs
-Docs
 
-https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/expressions.html
+![logo.apidsl.com](https://logo.apidsl.com/1/cover.png)
 
-// evaluates to true
-boolean trueValue = parser.parseExpression("2 == 2").getValue(Boolean.class);
+# [Sourcecode - bash.apidsl.com](https://bash.apidsl.com/) [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/MENU.md) 
 
-// evaluates to false
-boolean falseValue = parser.parseExpression("2 < -5.0").getValue(Boolean.class);
++ [Examples - examples.apidsl.com](http://examples.apidsl.com)
++ [Documentation - docs.apidsl.com](https://docs.apidsl.com/)
++ [Blog - www.apidsl.com](https://www.apidsl.com/)
++ [Logotyp - logo.apidsl.com](https://logo.apidsl.com/)
 
-// evaluates to true
-boolean trueValue = parser.parseExpression("'black' < 'block'").getValue(Boolean.class);
-        
-Logical operators
-
-The logical operators that are supported are and, or, and not. Their use is demonstrated below.
-
-// -- AND --
-
-// evaluates to false
-boolean falseValue = parser.parseExpression("true and false").getValue(Boolean.class);
-
-// evaluates to true
-String expression =  "isMember('Nikola Tesla') and isMember('Mihajlo Pupin')";
-boolean trueValue = parser.parseExpression(expression).getValue(societyContext, Boolean.class);
-
-// -- OR --
-
-// evaluates to true
-boolean trueValue = parser.parseExpression("true or false").getValue(Boolean.class);
-
-// evaluates to true
-String expression =  "isMember('Nikola Tesla') or isMember('Albert Einstein')";
-boolean trueValue = parser.parseExpression(expression).getValue(societyContext, Boolean.class);
-
-// -- NOT --
-
-// evaluates to false
-boolean falseValue = parser.parseExpression("!true").getValue(Boolean.class);
++ [LICENSE](../LICENSE)
 
 
-// -- AND and NOT --
-String expression =  "isMember('Nikola Tesla') and !isMember('Mihajlo Pupin')";
-boolean falseValue = parser.parseExpression(expression).getValue(societyContext, Boolean.class);
+
+## About [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/ABOUT.md)
+
+I did last time some wrapper for bash, python, ... with such format: load("domains.txt")
+
+```apidsl
+load("domains.txt")
+.split("/n")
+.http()
+.xpath("title")
+.appendToFile("titles.txt")
+```
+
+I am using it to build multiplatform scripts, where the same sentence will be executed on PHP, Python, JS, ...
+
+### The Inspiration was coming from such projects:
+
++ [jQuery, DOM Traversal and Manipulation](https://jquery.com/)
++ [Apache Camel uses a Java Domain Specific Language or DSL for creating Enterprise Integration Patterns or Routes in a variety of domain-specific languages (DSL)](https://camel.apache.org/manual/dsl.html)
 
 
-## Types
 
-The special 'T' operator can be used to specify an instance of java.lang.Class (the 'type'). Static methods are invoked using this operator as well. The StandardEvaluationContext uses a TypeLocator to find types and the StandardTypeLocator (which can be replaced) is built with an understanding of the java.lang package. This means T() references to types within java.lang do not need to be fully qualified, but all other type references must be.
-
-Class dateClass = parser.parseExpression("T(java.util.Date)").getValue(Class.class);
-
-Class stringClass = parser.parseExpression("T(String)").getValue(Class.class);
-
-boolean trueValue =
-   parser.parseExpression("T(java.math.RoundingMode).CEILING < T(java.math.RoundingMode).FLOOR")
-  .getValue(Boolean.class);
+## Supported technologies  [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/SUPPORTED.md)
 
 
-## Mathematical operators
+### Languages:
++ js
++ php
++ bash
++ python
 
-The addition operator can be used on numbers, strings and dates. Subtraction can be used on numbers and dates. Multiplication and division can be used only on numbers. Other mathematical operators supported are modulus (%) and exponential power (^). Standard operator precedence is enforced. These operators are demonstrated below.
+### Environment
++ docker
++ logs
 
-// Addition
-int two = parser.parseExpression("1 + 1").getValue(Integer.class); // 2
+## Data formats
 
-String testString =
-   parser.parseExpression("'test' + ' ' + 'string'").getValue(String.class);  // 'test string'
++ ini
++ json
++ yaml
++ csv
++ html
++ xml
 
-// Subtraction
-int four =  parser.parseExpression("1 - -3").getValue(Integer.class); // 4
 
-double d = parser.parseExpression("1000.00 - 1e4").getValue(Double.class); // -9000
+## APIfoundation [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/APIFOUNDATION.md)
 
-// Multiplication
-int six =  parser.parseExpression("-2 * -3").getValue(Integer.class); // 6
+Here are 3 levels of apifoundation solutions
++ apifork
++ apibuild
++ apidsl
 
-double twentyFour = parser.parseExpression("2.0 * 3e0 * 4").getValue(Double.class); // 24.0
+**apifork** to bring dependencies,packagages to the project
 
-// Division
-int minusTwo =  parser.parseExpression("6 / -3").getValue(Integer.class); // -2
+**apibuild** - to build it over composer, maven, npm, ...
 
-double one = parser.parseExpression("8.0 / 4e0 / 2").getValue(Double.class); // 1.0
+**apidsl** - to use it over hi level domain language 
 
-// Modulus
-int three =  parser.parseExpression("7 % 4").getValue(Integer.class); // 3
 
-int one = parser.parseExpression("8 / 5 % 2").getValue(Integer.class); // 1
+## Contribution [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/inframonit/bash/edit/main/DOCS/CONTRIBUTION.md)
 
-// Operator precedence
-int minusTwentyOne = parser.parseExpression("1+2-3*8").getValue(Integer.class); // -21
 
+Solutions for development:
+
+Install dependencies after created project
+```bash
+curl https://raw.githubusercontent.com/apifork/bash/main/apifork.sh -o apifork
+echo "https://github.com/flatedit/bash.git flatedit" > "apifork.dev.txt"
+./apifork install apifork.dev.txt
+```
+
+Edit documentation with flatedit
+```bash
+echo '#!/bin/bash' > 'readme'
+echo './flatedit/readme.sh readme.txt' > 'readme'
+echo "./DOCS/MENU.md" >> "readme.txt"
+echo "./DOCS/ABOUT.md" >> "readme.txt"
+echo "./DOCS/FOOT.md" >> "readme.txt"
+```
+
+### Update documentation
+
+```bash
+ ./readme
+```
+
+Config project file
+
+The config file: **.apifork** can be another, e.g. **projects.txt**
+
+Just change the first line in  **.apifork** on **projects.txt**
+```bash
+projects.txt
+```
+
+
+### install
+
+[minsungson/GitHub-cURL: A guide to installing files from GitHub repos in terminal using cURL](https://github.com/minsungson/GitHub-cURL)
+
+```bash
+./apifork install
+```
+OR
+
+```bash
+./apifork
+```
+
+### update
+
+```bash
+./apifork update
+```
+
+
+### remove
+
+```bash
+./apifork remove
+```
+
+
+## About flatedit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/FLATEDIT.md)
+
+
+### Dependencies
+
+projects list [**readme1.txt**](readme1.txt)
+```
+./DOCS/MENU.md
+../bash/DOCS/TODO.md
+./DOCS/FOOT.md
+```
+[**readme.sh**](readme.sh)
+```bash
+./flatedit/readme.md readme1.txt
+```
+
+### Comments
+
+With comments not to load this file
+
+projects list [**readme2.txt**](readme2.txt)
+```
+./DOCS/MENU.md
+../bash/DOCS/TODO.md
+./DOCS/FOOT.md
+```
+[**readme.sh**](readme.sh)
+```bash
+./flatedit/readme.md readme2.txt
+```
+
+
+### Logs
+
+Show not- & working/existing files
+
+
+projects list [**readme3.txt**](readme3.txt)
+```
+./DOCS/MENU.md
+../bash/DOCS/TODO.md
+./DOCS/FOOT.md
+```
+[**readme.sh**](readme.sh)
+```bash
+./flatedit/readme.md readme3.txt
+```
+
+
+## Docs [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/DOCS.md)
+
+
+
+
+### Zalezności ładowane z github
+
++ zamiast xpath - ładowanie zalezności przez skrypt github
++ letPath - przygotować
+  https://github.com/letpath/bash
+
+
+### Another examples
+
+get options
+https://reposhub.com/linux/system-utilities/ko1nksm-getoptions.html
+
+https://github.com/ko1nksm/getoptions
+
+
+
+## EXAMPLES [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/EXAMPLES.md)
+
+### git
+
+git("clone","https://github.com/laurivan/simpleargs.git")
+.cd("simpleargs")
+.nano("filename.txt","content")
+.git("commit","-m","nowy plik")
+.git("push");
+
+
+### xpath
+
+.get("https://web.com")
+.xpath("title")
+
+
+## TODO [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/TODO.md)
+
+### Mapowanie
+
+skrypty zapisywać w folderze głównym
+
+zamiast w folderach, kazdy skrypt z kropkami
+jeśli piszemy 
+
+letwhois.ns()
+plik:
+letwhois.ns.sh
+
+kazda funkcja jest przepisywana żeby mieć do niej dostęp z jednego poziomu bez przechodzenia po folderach
+
+uproszcenie zarządzania i wyswietlanie listy plików
+
+każda funkcja i tak musi działać autopnimicznie
+
+skrypt instalujący kopiuje wszystkie skrypty bezposrednio
+
+https://github.com/letwhois/bash apidsl/apidsl/bash letwhois
+
+apidsl/apidsl/bash/letwhois/reverseIp.sh 
+
+repozytiorium
+https://github.com/letwhois/bash
+
+mapa funkcji
+apidsl/apidsl/bash/letwhois/reverseIp.sh reverseIp
+
+1. pobiera cale repo
+https://github.com/letwhois/bash
+
+2. wyodrebnia poprzez mapowanie
+domainIp.sh domainIp
+domainIp.sh letwhois.domainIp
+
+
+
+
+
+
+#### mapowanie funkcji z linuxa:
+curl().grep("ri",)
+
+#### mapowanie funckji uslug w linux
+
+#### mapowanie API
++ Skąd pobierać dane autoryzacyjne?
+ 
+
+
+### Praktyczne przykłady
++ Example with plainedit
++ more loop options
++ many loop in one sentence
+
+install
+https://github.com/apidsl/ultimate-nmap-parser
+
+
+### Inframonit
+
+skanuje hosty
+git clone https://github.com/desecsecurity/parsing_html_bash
+./parsing_html.sh www.google.com
+
+
++ skrypty do detekcji
++ skrypty do naprawy
++ schematy naprawy / template w zalezności od sytuacji
+
+
+
+http.get("https://web.com")
+
+$('#cliente').click(function(){$('#container').load('/clienti/cliente.html');});
+
+js.
+import("https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+.get("https://web.com")
+.xpath("title")
+.print()
+
+
+js.
+console.log("clone")
+jquery.get("simpleargs")
+.nano("filename.txt","content")
+.git("commit","-m","nowy plik")
+.git("push");
+
+
+
+
+### Preprocessing
+
+Każdy z tych jest w fodlerze ze skryptami, gdzie kolejno podaje sie wartosci
++ values
++ context - before, next command
+
+
+---
+
++ [edit](https://github.com/apidsl/bash/edit/main/README.md)
++ [apidsl/bash](https://github.com/apidsl/bash)
