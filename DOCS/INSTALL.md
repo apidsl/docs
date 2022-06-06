@@ -1,5 +1,5 @@
 
-## Install [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/INSTALL.md)
+## Install [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/INSTALL.md)
 
 I did last time some wrapper for bash, python, ... with such format: load("domains.txt")
 

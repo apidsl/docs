@@ -1,7 +1,7 @@
 
 ![logo.apidsl.com](https://logo.apidsl.com/1/cover.png)
 
-# [Sourcecode - bash.apidsl.com](https://bash.apidsl.com/) [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/MENU.md) 
+# [Sourcecode - bash.apidsl.com](https://bash.apidsl.com/) [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/MENU.md) 
 
 + [Examples - examples.apidsl.com](http://examples.apidsl.com)
 + [Documentation - docs.apidsl.com](https://docs.apidsl.com/)
@@ -12,17 +12,30 @@
 
 
 
-## About [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/ABOUT.md)
+## About [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/ABOUT.md)
+
+APIDSL to zwykły skrypt o niezwykłych możliwościach
++ napisany w bash-u
++ jako lokalny skrypt bash, po skopiowaniu z repozytorium
++ jako komenda w systemie linux, po skopiowaniu do /usr/local/bin
++ z zarządzaniem zalezności: install, update ze wsparciem dla dla maven, composer, node
+
+APIDSL tworzy abstrakcyjną warstwę w multi-języklowych projektach do celów łatwiejszego re-użycia kodu bibliotek i projektów.
+APIDSL mapuje i uruchamia funkcje i skrypty z róznych języków programowania.
+Mapowanie pozwala na kierowanie strumienia danych neizaleznie od języka programowania do endpoint-u.
+Mapowanie skyrptów łączących się z API usług SaaS pozwala na łatwą integrację usług i tworzenie nowych.
+Deklaratywny zapis opisuje działanie połączonych ze sobą bibliotek i api, co pozwala na deployment i testowanie całej infrastruktury.
+
+Ten sam zapis APIDSL pozwala w zależnośći od załadowanych zależnosć uruchomić jak i przetestować infratsrukturę.
+
+
+
+Taki użycie kodu nie ogranicza nas do stosowania jednej technologii czy środowiska,
+a pozwala na łączenie najlepszych rozwiązań z różnych języków, bibliotek, frameworków, projektów opensorce czy API.
+
+---
 
 I did last time some wrapper for bash, python, ... with such format: load("domains.txt")
-
-```apidsl
-load("domains.txt")
-.split("/n")
-.http()
-.xpath("title")
-.appendToFile("titles.txt")
-```
 
 I am using it to build multiplatform scripts, where the same sentence will be executed on PHP, Python, JS, ...
 
@@ -33,7 +46,7 @@ I am using it to build multiplatform scripts, where the same sentence will be ex
 
 
 
-## Supported technologies  [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/SUPPORTED.md)
+## Supported technologies  [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/SUPPORTED.md)
 
 
 ### Languages:
@@ -56,7 +69,7 @@ I am using it to build multiplatform scripts, where the same sentence will be ex
 + xml
 
 
-## APIfoundation [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/APIFOUNDATION.md)
+## APIfoundation [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/APIFOUNDATION.md)
 
 Here are 3 levels of apifoundation solutions
 + apifork
@@ -134,7 +147,7 @@ OR
 ```
 
 
-## About flatedit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/FLATEDIT.md)
+## About flatedit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/FLATEDIT.md)
 
 
 ### Dependencies
@@ -183,7 +196,7 @@ projects list [**readme3.txt**](readme3.txt)
 ```
 
 
-## Docs [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/DOCS.md)
+## Docs [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/DOCS.md)
 
 
 
@@ -204,127 +217,82 @@ https://github.com/ko1nksm/getoptions
 
 
 
-## EXAMPLES [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/EXAMPLES.md)
-
-### git
-
-git("clone","https://github.com/laurivan/simpleargs.git")
-.cd("simpleargs")
-.nano("filename.txt","content")
-.git("commit","-m","nowy plik")
-.git("push");
+## EXAMPLES [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/EXAMPLES.md)
 
 
-### xpath
+Rozwiązanie #apidsl służy pisaniu komend do wcześniej napisanych skryptów, bibliotek, aplikacji.
+Zamiast ścieżek do plików używamy nazw jako funkcji z parametrem. Korzyść? re-użycie kodu, zamiast refaktoryzacji! APIDSL to jedno z rozwiązań w (pisanej jeszcze) książce #hipermodularyzacja
 
-.get("https://web.com")
+API + DSL = Application Programming Interface controlled over Domain Specific Language
+#apidsl is available for testing
+#hypermodularity #hyperprogramming #mvp #prototyping #programming #testing
+
+### install
+
+[minsungson/GitHub-cURL: A guide to installing files from GitHub repos in terminal using cURL](https://github.com/minsungson/GitHub-cURL)
+
+```bash
+./apifork install
+```
+
+```js
+load("domains.txt")
+.split("/n")
+.http()
 .xpath("title")
+.appendToFile("titles.txt")
+```
 
 
-## TODO [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/TODO.md)
+### xpath from functions
 
-### Mapowanie
-
-skrypty zapisywać w folderze głównym
-
-zamiast w folderach, kazdy skrypt z kropkami
-jeśli piszemy 
-
-letwhois.ns()
-plik:
-letwhois.ns.sh
-
-kazda funkcja jest przepisywana żeby mieć do niej dostęp z jednego poziomu bez przechodzenia po folderach
-
-uproszcenie zarządzania i wyswietlanie listy plików
-
-każda funkcja i tak musi działać autopnimicznie
-
-skrypt instalujący kopiuje wszystkie skrypty bezposrednio
-
-https://github.com/letwhois/bash apidsl/apidsl/bash letwhois
-
-apidsl/apidsl/bash/letwhois/reverseIp.sh 
-
-repozytiorium
-https://github.com/letwhois/bash
-
-mapa funkcji
-apidsl/apidsl/bash/letwhois/reverseIp.sh reverseIp
-
-1. pobiera cale repo
-https://github.com/letwhois/bash
-
-2. wyodrebnia poprzez mapowanie
-domainIp.sh domainIp
-domainIp.sh letwhois.domainIp
+```bash
+./apidsl.sh 'f.http("https://softreck.com").f.xpath("title")'
+```
 
 
+### tag from letpath
+
+```bash
+./apidsl.sh 'f.http("https://softreck.com").letpath.tag("title")'
+```
 
 
+### nameservers
 
+```bash
+./apidsl.sh 'whois.ns("softreck.com")'
+```
 
-#### mapowanie funkcji z linuxa:
-curl().grep("ri",)
+### loop
 
-#### mapowanie funckji uslug w linux
+```bash
+./apidsl.sh 'f.load("domains.txt").split("/n").f.http().f.xpath("title").f.appendToFile("titles.txt")'
+```
 
-#### mapowanie API
-+ Skąd pobierać dane autoryzacyjne?
- 
+more examples with scripts
+# test.deploymat.com
 
+```bash
+./apidsl.sh 'import("https://github.com/letpath/bash","path").path.load("apifork.txt")'
+./apidsl.sh 'path.load("apifork.txt")'
+```
 
-### Praktyczne przykłady
-+ Example with plainedit
-+ more loop options
-+ many loop in one sentence
+## LOGS
 
-install
-https://github.com/apidsl/ultimate-nmap-parser
+print logs for latest run
+```bash
+./apidsl.sh -l
+```
 
+## DEBUG
 
-### Inframonit
-
-skanuje hosty
-git clone https://github.com/desecsecurity/parsing_html_bash
-./parsing_html.sh www.google.com
-
-
-+ skrypty do detekcji
-+ skrypty do naprawy
-+ schematy naprawy / template w zalezności od sytuacji
-
-
-
-http.get("https://web.com")
-
-$('#cliente').click(function(){$('#container').load('/clienti/cliente.html');});
-
-js.
-import("https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
-.get("https://web.com")
-.xpath("title")
-.print()
-
-
-js.
-console.log("clone")
-jquery.get("simpleargs")
-.nano("filename.txt","content")
-.git("commit","-m","nowy plik")
-.git("push");
-
-
-
-
-### Preprocessing
-
-Każdy z tych jest w fodlerze ze skryptami, gdzie kolejno podaje sie wartosci
-+ values
-+ context - before, next command
-
+show infos after run
+```bash
+./apidsl.sh -d 'import("https://github.com/letpath/bash","path").path.load("apifork.txt")'
+```
 
 ---
 
-+ [edit](https://github.com/apidsl/bash/edit/main/README.md)
-+ [apidsl/bash](https://github.com/apidsl/bash)
++ [edit](https://github.com/apidsl/docs/edit/main/README.md)
++ [apidsl/docs](https://github.com/apidsl/docs)

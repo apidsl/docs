@@ -1,5 +1,5 @@
 
-## APIfoundation [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/APIFOUNDATION.md)
+## APIfoundation [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/APIFOUNDATION.md)
 
 Here are 3 levels of apifoundation solutions
 + apifork

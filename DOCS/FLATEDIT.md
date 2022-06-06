@@ -1,5 +1,5 @@
 
-## About flatedit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/bash/edit/main/DOCS/FLATEDIT.md)
+## About flatedit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/FLATEDIT.md)
 
 
 ### Dependencies

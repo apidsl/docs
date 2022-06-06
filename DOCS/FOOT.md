@@ -1,5 +1,5 @@
 
 ---
 
-+ [edit](https://github.com/apidsl/bash/edit/main/README.md)
-+ [apidsl/bash](https://github.com/apidsl/bash)
++ [edit](https://github.com/apidsl/docs/edit/main/README.md)
++ [apidsl/docs](https://github.com/apidsl/docs)
