@@ -14,6 +14,31 @@
 
 ## About [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/ABOUT.md)
 
+
+I did last time some wrapper for bash, python, ... with such format: load("domains.txt")
+
+```apidsl
+load("domains.txt")
+.split("/n")
+.http()
+.xpath("title")
+.appendToFile("titles.txt")
+```
+
+I am using it to build multiplatform scripts, where the same sentence will be executed on PHP, Python, JS, ...
+
+### The Inspiration was coming from such projects:
+
+
++ [jQuery, DOM Traversal and Manipulation](https://jquery.com/)
++ [Apache Camel uses a Java Domain Specific Language or DSL for creating Enterprise Integration Patterns or Routes in a variety of domain-specific languages (DSL)](https://camel.apache.org/manual/dsl.html)
+
+## Czym jest APIDSL
+
+
+![apidsllayers](apidsl-layers.png)
+
+
 APIDSL to zwykły skrypt o niezwykłych możliwościach
 + napisany w bash-u
 + jako lokalny skrypt bash, po skopiowaniu z repozytorium
@@ -29,21 +54,33 @@ Deklaratywny zapis opisuje działanie połączonych ze sobą bibliotek i api, co
 Ten sam zapis APIDSL pozwala w zależnośći od załadowanych zależnosć uruchomić jak i przetestować infratsrukturę.
 
 
-
 Taki użycie kodu nie ogranicza nas do stosowania jednej technologii czy środowiska,
 a pozwala na łączenie najlepszych rozwiązań z różnych języków, bibliotek, frameworków, projektów opensorce czy API.
 
----
 
 I did last time some wrapper for bash, python, ... with such format: load("domains.txt")
 
 I am using it to build multiplatform scripts, where the same sentence will be executed on PHP, Python, JS, ...
 
+[Programowanie imperatywne oraz deklaratywne | Codenga](https://codenga.pl/artykuly/poradniki/programowanie-imperatywne-oraz-deklaratywne)
+
+> Programowanie imperatywne oraz deklaratywne
+
+https://pl.wikipedia.org/wiki/Imperatyw
+Imperatyw (łac. imperativus – rozkazujący) – nakaz, reguła, zasada, która nie podlega dyskusji i którą można bezpośrednio wywieść z założeń teoretycznych.
+
+Paradygmat imperatywny można opisać tak: “mówimy jak komputer ma wykonać daną rzecz”. Czyli skupiamy się na poszczególnych krokach, które prowadzą do rozwiązania problemu.
+
+Możesz sobie wyobrazić program napisany imperatywnie jako ciąg instrukcji.
+
+
+Paradygmat deklaratywny można opisać tak: “mówimy komputerowi co ma dla nas zrobić”. Ważny jest dla nas wynik jaki uzyskamy - nie wnikamy w jaki sposób komputer ten wynik. osiągnie.
+
+Taki styl programowania pozwala skupić się więc na celu. Na tym, co chcemy osiągnąć. Mniej ważne są tutaj kroki, które do tego celu prowadzą.
 ### The Inspiration was coming from such projects:
 
 + [jQuery, DOM Traversal and Manipulation](https://jquery.com/)
 + [Apache Camel uses a Java Domain Specific Language or DSL for creating Enterprise Integration Patterns or Routes in a variety of domain-specific languages (DSL)](https://camel.apache.org/manual/dsl.html)
-
 
 
 ## Supported technologies  [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/SUPPORTED.md)
@@ -69,228 +106,8 @@ I am using it to build multiplatform scripts, where the same sentence will be ex
 + xml
 
 
-## APIfoundation [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/APIFOUNDATION.md)
 
-Here are 3 levels of apifoundation solutions
-+ apifork
-+ apibuild
-+ apidsl
 
-**apifork** to bring dependencies,packagages to the project
-
-**apibuild** - to build it over composer, maven, npm, ...
-
-**apidsl** - to use it over hi level domain language 
-
-
-## Contribution [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/inframonit/bash/edit/main/DOCS/CONTRIBUTION.md)
-
-
-Solutions for development:
-
-Install dependencies after created project
-```bash
-curl https://raw.githubusercontent.com/apifork/bash/main/apifork.sh -o apifork
-echo "https://github.com/flatedit/bash.git flatedit" > "apifork.dev.txt"
-./apifork install apifork.dev.txt
-```
-
-Edit documentation with flatedit
-```bash
-echo '#!/bin/bash' > 'readme'
-echo './flatedit/readme.sh readme.txt' > 'readme'
-echo "./DOCS/MENU.md" >> "readme.txt"
-echo "./DOCS/ABOUT.md" >> "readme.txt"
-echo "./DOCS/FOOT.md" >> "readme.txt"
-```
-
-### Update documentation
-
-```bash
- ./readme
-```
-
-Config project file
-
-The config file: **.apifork** can be another, e.g. **projects.txt**
-
-Just change the first line in  **.apifork** on **projects.txt**
-```bash
-projects.txt
-```
-
-
-### install
-
-[minsungson/GitHub-cURL: A guide to installing files from GitHub repos in terminal using cURL](https://github.com/minsungson/GitHub-cURL)
-
-```bash
-./apifork install
-```
-OR
-
-```bash
-./apifork
-```
-
-### update
-
-```bash
-./apifork update
-```
-
-
-### remove
-
-```bash
-./apifork remove
-```
-
-
-## About flatedit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/FLATEDIT.md)
-
-
-### Dependencies
-
-projects list [**readme1.txt**](readme1.txt)
-```
-./DOCS/MENU.md
-../bash/DOCS/TODO.md
-./DOCS/FOOT.md
-```
-[**readme.sh**](readme.sh)
-```bash
-./flatedit/readme.md readme1.txt
-```
-
-### Comments
-
-With comments not to load this file
-
-projects list [**readme2.txt**](readme2.txt)
-```
-./DOCS/MENU.md
-../bash/DOCS/TODO.md
-./DOCS/FOOT.md
-```
-[**readme.sh**](readme.sh)
-```bash
-./flatedit/readme.md readme2.txt
-```
-
-
-### Logs
-
-Show not- & working/existing files
-
-
-projects list [**readme3.txt**](readme3.txt)
-```
-./DOCS/MENU.md
-../bash/DOCS/TODO.md
-./DOCS/FOOT.md
-```
-[**readme.sh**](readme.sh)
-```bash
-./flatedit/readme.md readme3.txt
-```
-
-
-## Docs [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/DOCS.md)
-
-
-
-
-### Zalezności ładowane z github
-
-+ zamiast xpath - ładowanie zalezności przez skrypt github
-+ letPath - przygotować
-  https://github.com/letpath/bash
-
-
-### Another examples
-
-get options
-https://reposhub.com/linux/system-utilities/ko1nksm-getoptions.html
-
-https://github.com/ko1nksm/getoptions
-
-
-
-## EXAMPLES [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/EXAMPLES.md)
-
-
-Rozwiązanie #apidsl służy pisaniu komend do wcześniej napisanych skryptów, bibliotek, aplikacji.
-Zamiast ścieżek do plików używamy nazw jako funkcji z parametrem. Korzyść? re-użycie kodu, zamiast refaktoryzacji! APIDSL to jedno z rozwiązań w (pisanej jeszcze) książce #hipermodularyzacja
-
-API + DSL = Application Programming Interface controlled over Domain Specific Language
-#apidsl is available for testing
-#hypermodularity #hyperprogramming #mvp #prototyping #programming #testing
-
-### install
-
-[minsungson/GitHub-cURL: A guide to installing files from GitHub repos in terminal using cURL](https://github.com/minsungson/GitHub-cURL)
-
-```bash
-./apifork install
-```
-
-```js
-load("domains.txt")
-.split("/n")
-.http()
-.xpath("title")
-.appendToFile("titles.txt")
-```
-
-
-### xpath from functions
-
-```bash
-./apidsl.sh 'f.http("https://softreck.com").f.xpath("title")'
-```
-
-
-### tag from letpath
-
-```bash
-./apidsl.sh 'f.http("https://softreck.com").letpath.tag("title")'
-```
-
-
-### nameservers
-
-```bash
-./apidsl.sh 'whois.ns("softreck.com")'
-```
-
-### loop
-
-```bash
-./apidsl.sh 'f.load("domains.txt").split("/n").f.http().f.xpath("title").f.appendToFile("titles.txt")'
-```
-
-more examples with scripts
-# test.deploymat.com
-
-```bash
-./apidsl.sh 'import("https://github.com/letpath/bash","path").path.load("apifork.txt")'
-./apidsl.sh 'path.load("apifork.txt")'
-```
-
-## LOGS
-
-print logs for latest run
-```bash
-./apidsl.sh -l
-```
-
-## DEBUG
-
-show infos after run
-```bash
-./apidsl.sh -d 'import("https://github.com/letpath/bash","path").path.load("apifork.txt")'
-```
 
 ---
 
