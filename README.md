@@ -14,6 +14,8 @@
 
 ## About [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/ABOUT.md)
 
+One of the benefit of modularization is to have a modular architecture with independent modules from a programming language, so we present here an example langauge the APIDSL, which bring together different languages on shell level
+
 
 I did last time some wrapper for bash, python, ... with such format: load("domains.txt")
 
