@@ -1,5 +1,5 @@
 
-## Supported technologies  [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/SUPPORTED.md)
+## Supported technologies  [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/MD/SUPPORTED.md)
 
 
 ### Languages:

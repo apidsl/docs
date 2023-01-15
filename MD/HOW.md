@@ -1,5 +1,5 @@
 
-## How it works? [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/DOCS/HOW.md)
+## How it works? [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/MD/HOW.md)
 
 
 skrypt **apidsl.sh** Parsuje skrypty zapisywane w formacie: **funkcja("parametr")** i uruchamia w shellu przygotowane skrypty odnoszące się do nazyw plików:
