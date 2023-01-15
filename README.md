@@ -1,7 +1,7 @@
 
 ![logo.apidsl.com](https://logo.apidsl.com/1/cover.png)
 
-# + [Documentation - docs.apidsl.com](https://docs.apidsl.com/) [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/MD/MENU.md) 
+# [Documentation - docs.apidsl.com](https://docs.apidsl.com/) [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/apidsl/docs/edit/main/MD/MENU.md) 
 
 + [Sourcecode - bash.apidsl.com](http://bash.apidsl.com)
 + [Examples - examples.apidsl.com](http://examples.apidsl.com)
